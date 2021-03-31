@@ -1,0 +1,66 @@
+.tutorialheading{
+	clear: both;
+	font-family: "Raleway";
+	text-align: left;
+ 	text-shadow: 2px 2px 5px #a3d2d9;
+	font-size: 1.5vw;
+	padding-top: 2.5vh;
+	padding-left: 6vw;
+}
+
+.lessonformat{
+	clear: both;
+	font-family: "Raleway";
+	text-align: left;
+	font-size: 1.3vw;
+	padding-top: 2vh;
+	padding-left: 6vw;
+	padding-right: 6vw;
+	line-height: 2rem;
+}
+
+.center{
+	margin-top: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.newlessonspace{
+	border: none;
+	padding-bottom: 30px;
+}
+
+.code{
+	display: inline-block;
+	background: #dce7e8;
+	border: none;
+	padding-left:0.4vw;
+	padding-right:0.4vw;
+	font-size: 1.2vw;
+	font-family:'Courier New', monospace;
+}
+
+.lessonformatcode{
+	clear: both;
+	text-align: left;
+	font-size: 1.3vw;
+	padding-left: 3vw;
+	padding-top: 3vh;
+	padding-bottom: 3vh;
+	padding-right: 3vw;
+	margin:4vw;
+	margin-top: 2vw;
+	margin-bottom:2vw;
+	line-height: 1.7rem;
+	display: block;
+	background: #dce7e8;
+	border: none;
+	font-family:'Courier New', monospace;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}

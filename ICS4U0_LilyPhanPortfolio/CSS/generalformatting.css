@@ -1,0 +1,160 @@
+/**Gets rid of white border around website.*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Raleway";
+}
+
+.titleformat{
+	text-align: center;
+	text-shadow: 2px 2px #a3d2d9;
+	padding-top: 40px;
+	padding-bottom:20px;
+	font-size: 2.3vw;
+	letter-spacing:8px;
+	color: #2a2e2b;
+}
+
+body{
+	position: relative;
+	height = 100%;
+}
+
+/**Keeps footer at the bottom*/
+.maincontent{
+	padding-bottom: 95px;
+}
+
+/**Nav bar formatting start*/
+.navbar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	overflow: hidden;
+	background-color:#a9d0d4;
+	letter-spacing:5px;
+	border-bottom:4px #FFD700 solid; 
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	text-decoration: none;
+        display: block;
+	outline: none;
+	color: #2a2e2b;
+	padding: 22px 12px;
+	text-align: center;
+	letter-spacing:5px;
+	font-size: 1.5vw;
+	background-color:#a9d0d4;
+	border: none;
+}
+
+.dropdown .dropbtn .active{
+	color: #F81894;
+}
+
+.navbar > .icon a:hover{
+	background-color:#a9d0d4;
+	transition: 0.3s;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #5d999f;
+	transition: 0.3s;
+}
+
+
+.dropdown-content {
+	clear: both;
+	position: fixed;
+	background-color: #a9d0d4;
+	min-width: 10vw;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	overflow: hidden; 
+	max-height: 0; 
+	transition: max-height 0.3s ease; 
+}
+
+.dropdown-content a {
+	float: none;
+	color: #2a2e2b;
+	padding: 22px 10px;
+	text-decoration: none;
+	letter-spacing:5px;
+	display: block;
+	text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+	max-height: 800px; 
+}
+
+/**link formatting*/
+.navbarlinks{
+	float: right;	
+}
+
+.navbarlinks a {
+	display: block;
+	color: #2a2e2b;
+	padding: 22px 14px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.35vw;
+}
+/**Change the link color to a darker blue on hover*/
+.navbarlinks a:hover{
+	background-color: #5d999f;
+	transition: 0.3s;
+}
+
+.navbarlinks .active{
+	color: #F81894;
+}
+
+/**Nav bar formatting end*/
+
+
+.titlebar{
+	border-bottom: 2px solid #2a2e2b;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 15%;
+}
+
+.headingformat{
+	clear: both;
+	text-align: left;
+	text-shadow: 2px 1px #a3d2d9;
+	font-size: 2vw;
+	padding-top: 20px;
+	padding-left: 70px;
+}
+
+/**Footer formatting*/
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color:#026670;
+	color:white;
+	text-align:center;
+	font-size:15px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.plainbackground {
+	background-color:#dfeef0;
+}
+
+.pushfooter{
+	border: none;
+	padding-bottom: 145px;
+}
