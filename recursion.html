@@ -106,7 +106,7 @@
 			The  <b><style class = "code">return powersR(base, exp - 1) * base</style></b> line is what calls the method in itself and causes the method to be recursive. Each time, it's passing the <b>base value</b> and a <b>smaller exponent</b>. The base value stays the same through each method call, but the exponential value consistently becomes smaller until  <b><style class = "code">exp <= 0</style></b> since the value being passed in for the exponent is decremented by 1 each time. Refer to the image below which traces the variables in this power method and outputs them to console:<br><br>
 		</p>
 
-		<img src = "./Images/recursionresult.png" class = "center">
+		<img src = "Images/recursionresult.png" class = "center">
 
 		<p class = "lessonformat">
 			Remember! <b>A common issue people make is to leave out the base case</b>. If you don't have one, or if it is poorly written (eg. unreachable/can never be met), you will end up with an error as the method is infinitely calling itself. Also, when calling the method in itself, the value being passed in has to change in some way to get the problem to actually reduce to a smaller problem. If it doesn't, your base case will never be reached and it will run infinitely.  <br><br>
