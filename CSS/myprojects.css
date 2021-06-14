@@ -1,0 +1,49 @@
+#card > img{
+	width: 50%;
+	transition: 0.7s;
+	border: none;
+}
+
+video{
+	position: relative;
+	width: 50%;
+	transition: 0.7s;
+	border: none;
+}
+
+#card > img:hover{
+	transform: scale(1.1);
+	padding: 20px;
+	transition: 0.7s;
+	border: none;
+}
+
+video:hover{
+	transform: scale(1.1);
+	padding: 20px;
+	transition: 0.7s;
+	border: none;
+}
+
+
+#explain{
+	display: block;
+	font-family: "Raleway";
+	text-align: center;
+	width: 60%;
+	font-size: 1.3vw;
+	line-height: 2rem;
+}
+
+video:focus{
+	outline :none;
+}
+
+.center{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}

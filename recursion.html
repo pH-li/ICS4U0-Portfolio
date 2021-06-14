@@ -1,0 +1,139 @@
+<DOCTYPE! html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<head>
+	<title>Lily Phan // Recursion</title>
+	<link rel="icon" href="images/favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="CSS/generalformatting.css">
+	<link rel="stylesheet" type="text/css" href="CSS/tutorial.css">
+	<link rel="stylesheet" type="text/css" href="CSS/recursion.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body id="aboutmebody">
+	<div class="plainbackground"></div>
+	<div id="maincontent">
+		<div class="navbar">
+			<span class = "icon"><a href = "index.html"><img src="images/navbaricon.png" alr = "nav bar icon", height = "65"></a></span>
+			<li class="navbarlinks"><a href = "contactme.html">| CONTACT |</a></li>
+			<li class="navbarlinks"><a href = "aboutme.html">| ABOUT ME |</a></li>
+			<li class="navbarlinks"><a href = "myprojects.html">| PROJECTS |</a></li>
+			<div class="dropdown">
+				<button class = "dropbtn"> 
+					<div class = "active">
+					| TUTORIALS |
+					</div>
+				</button>
+				<div class="dropdown-content">
+   					   <a href="oop.html">OOP</a>
+   					   <a href="arrays.html">Arrays & ArrayLists</a>
+					   <a href="2Darrays.html">2D Arrays</a>
+					   <a href="searchingandsorting.html">Searching & Sorting</a>
+					   <a href="recursion.html">Recursion</a>
+				</div>
+			</div>
+			<li class="navbarlinks"><a href = "index.html">| HOME | </a></li>
+		</div>
+		<p class="titleformat">
+			| RECURSION |
+		</p>
+		
+		<hr class="titlebar">
+		
+		<p class = "lessonformat">
+			Recursion occurs when <b>a method continuously calls itself</b>. Let's take a closer look!
+		</p>
+
+		<h6 class = "tutorialheading">
+			TECHNICAL DETAILS
+		</h6>
+
+		<p class = "lessonformat">
+			<b>Recursion</b> was developed as a "divide and conquer" algorithm. Recursive methods solve a problem by <b>breaking the problem down into smaller problems</b> until it reaches a problem that it can definitively solve. For a problem to have a recursive solution, the following conditions must be met:
+		</p>
+
+		<dl>
+			<dt>The problem must have the ability to repetitively decompose
+</dt>
+				<dd>This gives reason to use recursion, as it consistently calls itself and uses the same pattern over and over again to solve the problem</dd>
+			<dt>There must be a way to identify the base of the solution (eg. the method stops calling itself and returns a non-recursive value after a certain value is reached)</dt>	
+				<dd>This is required to break out of the recursive method</dd>
+				<dd>This is called the base case and will NOT call the method it resides in</dd>
+			<dt>There must be a way of achieving a larger result based on what the recursive method returns</dt>
+				<dd>The recursive method is going to be continuously calling itself and returning a value meaning that something needs to happen with those return values</dd>
+		</dl>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			TRACING RECURSIVE METHODS
+		</h6>
+
+		<p class = "lessonformat">
+			To understand how to write a recursive method, we need to thoroughly understand its algorithm. Consider the diagram below:
+		</p>
+
+		<img src = "images/examplerecursion.png" class = "center">
+
+		<p class = "lessonformat">
+			The above diagram is essentially what happens when a recursive method is used. It looks almost like a V shape! Notice how we started off by not knowing any of our values, but after the base case (the green ball), we started figuring out the values of the rest of the shapes! <br><br>
+			Take a look at this powers method I (Lily Phan) wrote which <b>calculates the power of some number using recursion</b>:
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public static int powersR(int base, int exp){ <br>
+			<span class = "tab"></span>if (exp <= 0){<br>
+			<span class = "tab"></span><span class = "tab"></span>return 1;<br>
+			<span class = "tab"></span>}<br>
+			<span class = "tab"></span>return powersR(base, exp - 1) * base;<br>
+			}<br>
+		</p></b>
+
+		<p class = "lessonformat">
+			Say we called the method using <b><style class = "code">System.out.println(powers(12, 3))</style></b>. Take a look at its output:
+		</p>
+
+		<b><p class = "lessonformatcode">
+			1728
+		</p></b>
+
+		<p class = "lessonformat">
+			So what's going on here? Let's backtrack the problem. We want to calculate the power (let's call this value b) of some base number (let's call this value n). To calculate this, the problem is usually written as n<sup>b</sup>. But this can also be written as n * n<sup>(b - 1)</sup>. And n<sup>(b - 1)</sup> can also be written as n * <sup>n(b - 2)</sup>. And this can keep repeating until the power is equal to 0, since when the power is equal to 0, the product is always 1.<br><br>
+
+			Whoa, what's this? We have a repeating pattern that <b>consistently decomposes</b>, has a <b>base case</b> (if the power is equal to 0, the product will always be 1) and we have <b>a way of achieving a greater result</b> (finding out n<sup>(b - someValue)</sup> and multiplying it by the previous n value)! Looks like a good situation to use recursion.<br><br>
+
+			The  <b><style class = "code">return powersR(base, exp - 1) * base</style></b> line is what calls the method in itself and causes the method to be recursive. Each time, it's passing the <b>base value</b> and a <b>smaller exponent</b>. The base value stays the same through each method call, but the exponential value consistently becomes smaller until  <b><style class = "code">exp <= 0</style></b> since the value being passed in for the exponent is decremented by 1 each time. Refer to the image below which traces the variables in this power method and outputs them to console:<br><br>
+		</p>
+
+		<img src = "images/recursionresult.png" class = "center">
+
+		<p class = "lessonformat">
+			Remember! <b>A common issue people make is to leave out the base case</b>. If you don't have one, or if it is poorly written (eg. unreachable/can never be met), you will end up with an error as the method is infinitely calling itself. Also, when calling the method in itself, the value being passed in has to change in some way to get the problem to actually reduce to a smaller problem. If it doesn't, your base case will never be reached and it will run infinitely.  <br><br>
+
+			In some ways, recursion works like a loop. Most recursive methods can be written/replaced with iterative statements, but sometimes it's much faster and makes more sense to use a recursive method (eg. merge sort uses recursion instead of iteration to sort a set of data quickly).
+		</p>
+
+		<hr class = "newlessonspace">
+		
+		<h6 class = "tutorialheading">
+			BIBLIOGRAPHY
+		</h6>
+
+		<p class = "lessonformat">	
+			ICS4U0 Course Content, taught by Krasteva, V. <br>
+			All code written by Lily Phan (2021). <br>
+			All images made by Lily Phan (2021). <br>
+		</p>
+
+	<hr class = "pushfooter">
+
+	</div>
+		<footer>
+		<p>
+		Copyright &copy; 2021, Website made entirely from scratch by Lily Phan :)
+		</p>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<DOCTYPE! html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<head>
+	<title>Lily Phan // Arrays & ArrayLists</title>
+	<link rel="icon" href="images/favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="CSS/generalformatting.css">
+	<link rel="stylesheet" type="text/css" href="CSS/tutorial.css">
+	<link rel="stylesheet" type="text/css" href="CSS/arrays.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body id="aboutmebody">
+	<div class="plainbackground"></div>
+	<div id="maincontent">
+		<div class="navbar">
+			<span class = "icon"><a href = "index.html"><img src="images/navbaricon.png" alr = "nav bar icon", height = "65"></a></span>
+			<li class="navbarlinks"><a href = "contactme.html">| CONTACT |</a></li>
+			<li class="navbarlinks"><a href = "aboutme.html">| ABOUT ME |</a></li>
+			<li class="navbarlinks"><a href = "myprojects.html">| PROJECTS |</a></li>
+			<div class="dropdown">
+				<button class = "dropbtn"> 
+					<div class = "active">
+					| TUTORIALS |
+					</div>
+				</button>
+				<div class="dropdown-content">
+   					   <a href="oop.html">OOP</a>
+   					   <a href="arrays.html">Arrays & ArrayLists</a>
+					   <a href="2Darrays.html">2D Arrays</a>
+					   <a href="searchingandsorting.html">Searching & Sorting</a>
+					   <a href="recursion.html">Recursion</a>
+				</div>
+			</div>
+			<li class="navbarlinks"><a href = "index.html">| HOME | </a></li>
+		</div>
+		<p class="titleformat">
+			| ARRAYS & ARRAYLISTS |
+		</p>
+		
+		<hr class="titlebar">
+
+		<h6 class = "tutorialheading">
+			ARRAYS
+		</h6>
+		<p class = "lessonformat">
+			Have you ever had to create multiple variables that were of the same data type and served nearly the same purpose? Do you ever wish that you could somehow declare all those variables at the same time instead of doing 50 declaration and initialization statements? Well if you did, then you would be relieved to know of the existence of <b>arrays</b>!
+		</p>
+
+		<p class = "lessonformat">
+			<b>Arrays are a collection of data storage locations</b>, used to store multiple variables of the same data type; primitive (eg. int, double), or non-primitive (eg. String, objects). Each value in an array is referred to as an <b>element</b>, and each value can be accessed using its index. A value's <b>index</b> refers to its position in an array. With Java, the first element of an array is at index 0. An array's length refers to the number of elements in an array. This length cannot be changed after it's been declared; meaning that arrays are not mutable. Arrays can be thought of as something that looks like this:
+		</p>
+		
+		<img src = "Images/firstarrayexample.PNG" alt="first array example" class="center">
+		
+		<p class = "lessonformat">
+			When declaring an array, it's very similar to a normal variable declaration. You start by writing its data type, but then you also follow it with 2 square brackets (like this: []). Finally, you write the identifier or array name. Your declaration should look something like <b><style class = "code">dataType [] arrName</style></b>.
+		</p>
+
+		<p class = "lessonformat">
+			There are 2 ways to initialize an array. First, you could initialize an array by only writing how many elements you want to include. To do this, you would use the <b>new</b> keyword, followed by the data type and the number of elements you want in square brackets. Does this initialization look familiar? You've probably used this when creating objects or other reference data types like Strings. That's because </b>an array is a reference data type</b>. 
+		</p>
+	
+		<p class = "lessonformat">
+			Your initialization statement should look something like <b><style class = code>dataType [] arrName = new arrName[numOfElements]</style></b>. When you initialize an array like this, all the elements are assigned their default values. For example, if we declared an integer array with 6 elements (<b><style class = code>int [] arr = new int[6]</style></b>), all 6 elements will have the value 0. See below for a chart showing the different data types and their default values.
+		</p>
+
+		<table>
+			<tr>
+				<th>Data Type</th>
+				<th>Default Value</th>
+			</tr>
+			<tr>
+				<td>int</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>double</td>
+				<td>0.0</td>
+			</tr>
+			<tr>
+				<td>boolean</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>char</td>
+				<td>'\u0000' <br><br> Note: This is basically like an empty char.</td>
+			</tr>
+			<tr>
+				<td>String/Any Reference Type</td>
+				<td>null</td>
+			</tr>
+		</table>
+
+		<p class = "lessonformat">
+			The second way to initialize an array is with an <b>initializer list</b>. This is done by assigning all the elements you want in the array with curly braces (like this: {}), while separating each element with a comma. For example, if we were to initialize our arr array from before, we could write <b><style class = code>int [] arr = {34, 5, 312, 3, -35, 44}</style></b>. The length of the array is automatically set to the number of elements included. Note that the initializer list can only be used when you first declare the array. 
+		</p>
+
+		<p class = "lessonformat">
+			To modify values/elements in an array, you would need to access each individual element using square brackets. You start by calling the array's identifier, followed by square brackets with an element's index in between, and assigning a value of the same data type to it. For instance, if we wanted to change the value at index 0 (the first element in the array) in our previous example array, we would write <b><style class = code>arr [0] = 45</style></b>.
+		</p>
+
+		<p class = "lessonformat">
+			We can also use an array's indices to access each element in an array. Instead of assigning a value to the array, we can simply write <b><style class = code>arr[0]</style></b> which will give us the value at index 0 in the array arr.
+		</p>
+
+		<p class = "lessonformat">
+			If you wanted to access the length of the array, use the array list name followed by <b><style class = "code">.length</style></b>. For instance, <b><style class = code>arr.length</style></b> returns the length of the array. Remember, don't confuse this with <b><style class = "code">.length()</style></b>! That's used for Strings, not arrays.
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			ARRAYLISTS
+		</h6>
+
+		<p class = "lessonformat">
+			Arrays are great, but they're kind of stiff. You can't change its length after it has been declared, and they don't have methods despite being a reference type. However, that's where an <b>ArrayList</b> comes in! 
+		</p>
+
+		<p class = "lessonformat">
+			The length of an ArrayList is mutable, meaning that its length can chance at any time! Not only that, but their many methods give them their characteristic flexibility which is often why they are used. However, <b>an ArrayList can only be used with object references</b>. In order to use an ArrayList, you must import it by writing either <b><style class = code>import java.util.ArrayList </style></b>, <b><style class = code>import java.util.List</style></b>, or <b><style class = code>import java.util.*</style></b> at the top of your program.
+		</p>
+
+		<p class = "lessonformat">
+			The <b>declaration</b> for an ArrayList is almost the same as an array. The only difference is that instead of using square brackets, you use angle brackets (<>). For example, you would write <b><style class = code>ArrayList<DataType> variableName </style></b> to declare an array list. While it isn't necessary to write the data type, it's much more preferable to include the data type than to not. This is because it's considered an unsafe operation to not include the data type (it's possible to add the wrong data types to the array list accidentally, which would cause errors later on in the program). 
+		</p>
+
+		<p class = "lessonformat">
+			To <b>instantiate</b> an ArrayList with no size specified, you could write <b><style class = "code">ArrayList<DataType> variableName = new ArrayList<DataType>()</style></b> which creates an ArrayList with size/length of 10 elements. It's very important to <b>remember the two brackets at the end</b>, as it's calling the constructor of the ArrayList class to actually create the ArrayList. If you wanted to add a certain number of elements to an array list, you'd simply write the number of elements in the normal brackets (these ones: ()).
+		</p>
+
+		<p class = "lessonformat">
+			Remember how an ArrayList can only store object references? Well, this doesn't completely mean that we can't store primitive data types. We just need to change their data types slightly. Instead of writing something like <b><style class = "code">int</style></b>, or <b><style class = "code">double</style></b>, we would write their <b>wrapper classes</b>. Wrapper classes, for ArrayList purposes, turn primitive data types into objects. For instance, we would write <b><style class = "code">ArrayList <Integer> arr = new ArrayList<Integer>()</style></b>. Below are the wrapper class names for the most common data types.
+		</p>
+
+		<table>
+			<tr>
+				<th>Data Type</th>
+				<th>Wrapper Class</th>
+			</tr>
+			<tr>
+				<td>int</td>
+				<td>Integer</td>
+			</tr>
+			<tr>
+				<td>double</td>
+				<td>Double</td>
+			</tr>
+			<tr>
+				<td>boolean</td>
+				<td>Boolean</td>
+			</tr>
+			<tr>
+				<td>char</td>
+				<td>Character</td>
+			</tr>
+		</table>
+
+		<p class = "lessonformat">
+			Note that <b>Java is case-sensitive</b>! Wrapper classes must start with a capital letter.
+		</p>
+
+		<p class = "lessonformat">
+			Now that we know what an ArrayList is, let's take a look at the methods from the ArrayList class we can use! Below is a table featuring the main ArrayList methods. Note that <b><style  class = "code">arrlist</style></b> refers to an example ArrayList. <b><style class = "code">E</style></b> refers to the same data type that the ArrayList is.
+		</p>
+
+		<table id = "arraylistmethods">
+			<tr>
+				<th>Method</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>arrlist.size()</td>
+				<td>Returns an int value for the number of elements in the list</td>
+			</tr>
+			<tr>
+				<td>arrlist.contains(E obj)</td>
+				<td>Returns true if arraylist contains that object; returns false otherwise</td>
+			</tr>
+			<tr>
+				<td>Collections.shuffle(arrlist)</td>
+				<td>Shuffles/randomizes the order of the elements in an arraylist</td>
+			</tr>
+			<tr>
+				<td>arrlist.indexOf(E obj)</td>
+				<td>Returns the index of the first occurrence of the object in the arraylist</td>
+			</tr>
+			<tr>
+				<td>arrlist.isEmpty()</td>
+				<td>Returns true if the arraylist has no elements; returns false otherwise</td>
+			</tr>
+			<tr>
+				<td>arrlist.add(E obj)</td>
+				<td>Appends obj (which MUST be the same data type as the array) to the end of arrlist; returns true <br><br>NOTE: If there is no space in the array list to add the value, the arraylist automatically doubles its current capacity to include the extra information</td>
+			</tr>
+			<tr>
+				<td>arrlist.add(int index, E obj)</td>
+				<td>Inserts obj (which MUST be the same data type as the array) to the position specified at index and shifts every element to right of it 1 space to the right; returns true</td>
+			</tr>
+			<tr>
+				<td>arrlist.remove(int index)</td>
+				<td>Removes the element at index in arrlist and moves elements to the right of it to the left by 1 space and reduces arrlist.size() by 1; returns the element formerly at index</td>
+			</tr>
+			<tr>
+				<td>arrlist.remove(E obj)</td>
+				<td>Searches for the first occurrence of the specified element and removes it from the list; everything else acts like the previous .remove method</td>
+			</tr>
+			<tr>
+				<td>arrlist.set(int index, E obj)</td>
+				<td>Replaces the element at position index with obj; returns the element formerly at index</td>
+			</tr>
+			<tr>
+				<td>arrlist.get(int index)</td>
+				<td>Returns the element at position index</td>
+			</tr>
+			<tr>
+				<td>arrlist.clear();</td>
+				<td>Removes all the elements in the arraylist</td>
+			</tr>
+			<tr>
+				<td>arrlist.addAll(Arrays.asList(arr))</td>
+				<td>Appends the array arr to the arraylist; returns true</td>
+			</tr>
+			<tr>
+				<td>arrlist.toString()</td>
+				<td>Returns the array list contents as a String in the form of [element1, element2, element3, …]</td>
+			</tr>
+		</table>
+
+		<p class = "lessonformat">
+			Notably, if your method is returning an object that is a wrapper class (eg. Integer), then Java will use a process called <b>auto unboxing</b> which will automatically convert the wrapper class back into a primitive data type. When you're assigning primitive data types into an array list method, the opposite, called <b>autoboxing</b>, occurs. In this process, Java automatically converts the primitive data type into a wrapper class object for you.
+		</p>
+
+		<p class = "lessonformat">
+			So, we've learned about ArrayLists, and how awesome they are. But what about their applications? Well, there are many. They typically are used over arrays when we have large amounts of data or when we have an unknown number of elements. They are also used when we want to use certain functionalities of an ArrayList, such as <b><style class = "code">Collections.shuffle()</style></b>. For example, take a look at this snippet of code which Nancy Zhu and I (Lily Phan) wrote:
+		</p>
+		
+	<b>	<p class = "lessonformatcode">
+			import java.util.*;<br>
+
+			public class BridgeGame {<br>
+			<span class="tab"></span>/** Initializes a deck of cards. */<br>
+			<span class="tab"></span>   private ArrayList&lt;String> cardDeck= new ArrayList&lt;String>(52);<br>
+			<span class="tab"></span>/** Initializes player 1's hand. */<br>
+			<span class="tab"></span>   private ArrayList&lt;String> player1 = new ArrayList&lt;String>(13);<br>
+			<span class="tab"></span>/** Initializes player 2's hand. */<br>
+			<span class="tab"></span>   private ArrayList&lt;String> player2 = new ArrayList&lt;String>(13);<br>
+			<span class="tab"></span>/** Initializes player 3's hand. */<br>
+			<span class="tab"></span>   private ArrayList&lt;String> player3 = new ArrayList&lt;String>(13);<br>
+			<span class="tab"></span>/** Initializes player 4's hand. */<br>
+			<span class="tab"></span>   private ArrayList&lt;String> player4 = new ArrayList&lt;String>(13);<br><br>
+        
+			<span class="tab"></span>/**<br>
+			<span class="tab"></span> * {@link BridgeGame} constructor.<br>
+			<span class="tab"></span> * Sets the value of {@link #cardDeck}.<br>
+			<span class="tab"></span> */<br>
+			<span class="tab"></span>   public BridgeGame(){<br>
+			<span class="tab"></span><span class="tab"></span>      String[] cards = {"AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "TS", "JS", "QS", "KS", "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "TH", "JH", "QH", "KH", "AD", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "TD", "JD", "QD", "KD", "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "TC", "JC", "QC", "KC"};<br>
+			 <span class="tab"></span><span class="tab"></span>     cardDeck.addAll(Arrays.asList(cards));<br>
+			<span class="tab"></span>   }<br>
+
+			<span class="tab"></span><span class="tab"></span>/** Assigns values from cardDeck to each player's hand. */<br>
+			<span class="tab"></span><span class="tab"></span>   public void dealCards(){<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>     Collections.shuffle(cardDeck);<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>     int i = 0;<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>     /**Runs until all the cards have been removed from the deck.*/<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>    while(i < cardDeck.size()){<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>       player1.add(cardDeck.get(0));<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>   cardDeck.remove(0);<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>      player2.add(cardDeck.get(0));<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>       cardDeck.remove(0);<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>   player3.add(cardDeck.get(0));<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>    cardDeck.remove(0);<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>     player4.add(cardDeck.get(0));<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>      cardDeck.remove(0);<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>      i++;<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>     }<br>
+			<span class="tab"></span><span class="tab"></span>  } <br>
+			<span class="tab"></span>/** Rest of code not shown. */
+		</p> </b>
+				
+		<p class = "lessonformat">
+			The code above is part of a program meant to imitate a single round of the card game Bridge involving 4 players. Part of the problem that need to be solved required us to <b>shuffle a deck of cards and distribute them to 4 players</b>. For this program, it would be most profitable to use ArrayLists to store our data as there are methods such as <b><style  class = "code">.shuffle()</style></b> and <b><style  class = "code">.remove()</style></b> which would make this process a lot faster than it would with arrays. <br><br> 
+			Before we could start shuffling and distributing, we needed to fill the card deck with cards. Thus, Nancy and I used the ArrayList method <b><style  class = "code">cardDeck.addAll(Arrays.asList(cards))</style></b> to add all the cards in the class constructor, where cards is an array with all the possible cards. Doing this is more efficient than writing <b><style  class = "code">.add()</style></b> 52 times to add all the cards into the deck.<br><br> 
+			Next, we wrote a method called <b><style  class = "code">dealCards()</style></b> which is intended to shuffle the card deck and distribute the cards. Since we were using arrays, shuffling was very simple. All we needed to do was use <b><style  class = "code">Collections.shuffle()</style></b> to shuffle cardDeck. Shuffling the cards is essential to ensuring that players do not recieve the same cards every round, as the distribution of cards uses the same algorithm each time.<br><br>
+			Now the main part of the code snippit; distributing the cards! Notably, this took a lot of trial and error. At first, Nancy and I didn't realize there was a <b><style  class = "code">.shuffle()</style></b> method. Thus, we created 4 for loops for each of the players' hands. Each for loop essentially picked a random index in the cardDeck ArrayList, and assigned the value at that index into a player's hand before removing that value from the original deck. While the logic for this seemed fine, and it did work, the code was rather long. Moreover, we noticed that we were technically just repeating the code over and over again, only changing the ArrayList we were assigning information to. Thus, we tried looking for a shorter algorithm. <br><br>
+			At this point, we discovered the <b><style  class = "code">.shuffle()</style></b>, which allowed us to remove all the extra lines of code that found a random index in the cardDeck ArrayList. Hooray! But we still had 4 for loops, all of which were doing the same thing; iterating through 13 elements. Thus, we tried combining the for loops and created 1 for loop which added values from cardDeck into each player's hand while removing values from said ArrayList. <br><br> <b>A common mistake</b> with removing elements in a loop, which Nancy and I unfortunately committed, was writing the wrong condition for the for loop. Instead of setting the condition to be something like <b><style  class = "code">i = cardDeck.size(); i >= 0; i--</style></b> we wrote <b><style  class = "code">i = 0; i < cardDeck.size(); i++</style></b>, which iterated more times than necessary since the loop was removing elements from cardDeck and therefore reducing its size. If you want to read more in-depth about this issue with removing elements from an ArrayList with a loop, please scroll down to the <b>"Traversing Arrays & ArrayLists"</b> section. <br><br> Nancy and I settled with using a while loop to solve this issue. Using a while loop is generally a safer option while removing elements as the condition is checked and updated each time the loop iterates. The only thing with while loops, is that you need to remember to have your loop counter (in our case, <b><style  class = "code">i</style></b>) increment in the while loop or else you will be faced with an infinite loop. We could have solved this with a for loop, which may have enabled us to use less lines, but nonetheless they work the same and using one over the other has little benefit.
+		</p>	
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			TRAVERSING ARRAYS & ARRAYLISTS
+		</h6>
+		
+		<p class = "lessonformat">
+			To traverse an array or an ArrayList means to access all the elements in it, usually done with either an <b>enhanced for loop</b> (for-each) or a <b>regular for loop</b>. If you want to simply output all the values in a for-each loop, or tally all the points up, then a for-each loop is the way to go. Otherwise, a regular for loop works just fine. See below for an example code of how to traverse an array using a for-each loop. Assume that arrlist has been properly declared and initialized.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			for (String output : arrlist){ //loops through every element of the array<br>
+			<span class="tab"></span>System.out.println(output); //outputs each element to console<br>
+			}
+
+		</p></b>
+		
+		<p class = "lessonformat">
+			Here's the exact same code but written with a for loop:
+		</p>
+		
+		<b><p class = "lessonformatcode">
+			for (int i = 0; i < arrlist.length; i++){ //loops through every element of the array <br>
+			<span class="tab"></span>System.out.println(arrlist[i]); //outputs each element to console <br>
+			} 
+		</p></b>
+		
+		<p class = "lessonformat">
+			This is fairly simple for arrays, but what happens when we traverse an ArrayList while removing elements? This becomes complicated, since when we remove items, it also shortens the size of our ArrayList, which makes the ArrayList prone to skipping elements. How does this happen? Well, the ArrayList's size is shorter, but the increment value moves on to the next index without checking the element that replaced the element that was removed, which results in the loop skipping that value. Thus, you can solve this by traversing the array list backwards with a for loop. This way, even when all the values to the right of the removed elements are shifted to the left, it doesn't matter since they've already been checked and the loop can move on to the next element. See below for an example code of how to traverse an arraylist backwards while removing all the strings that start with 'a'. Assume that arrlist has been properly declared and initialized.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			for (int i = arrlist.size() - 1; i >= 0; i--){ <br>
+			<span class="tab"></span>if (arrlist.get(i).charAt(0) == 'a'){<br>
+			<span class="tab"></span><span class="tab"></span>arrlist.remove(i);<br>
+			<span class="tab"></span>}<br>
+			}<br>
+		</p></b>
+
+		<p class = "lessonformat">
+			Remember, we can't use a for-each loop for traversing an array/ArrayList backwards!
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			BIBLIOGRAPHY
+		</h6>
+		
+		<p class = "lessonformat">
+			<a href = "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank"> https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.htm</a><br>
+			<a href = "https://www.tutorialspoint.com/why-do-we-need-a-wrapper-class-in-java#:~:text=A%20Wrapper%20class%20is%20a,util%20package." target="_blank">https://www.tutorialspoint.com/why-do-we-need-a-wrapper-class-in-java#:~:text=A%20Wrapper%20class%20is%20a,util%20package.</a><br> 
+			<a href = "https://www.w3schools.com/java/java_wrapper_classes.asp" target="_blank"> https://www.w3schools.com/java/java_wrapper_classes.asp </a><br>
+			ICS4U0 Course Information, taught by Krasteva V.<br>
+			AP Classroom Unit 6 Videos <br>
+			Images were all screenshots taken by Lily Phan (2021). <br>
+			Code written in partnership by Lily Phan and Nancy Zhu (2021). <br>
+		</p>
+
+		<hr class = "pushfooter">
+
+	</div>
+	<footer>
+		<p>
+		Copyright &copy; 2021, Website made entirely from scratch by Lily Phan :)
+		</p>
+	</footer>
+</body>
+
+</html>

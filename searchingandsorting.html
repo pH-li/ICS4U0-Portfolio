@@ -1,0 +1,212 @@
+<DOCTYPE! html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<head>
+	<title>Lily Phan // Searching & Sorting</title>
+	<link rel="icon" href="images/favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="CSS/tutorial.css">
+	<link rel="stylesheet" type="text/css" href="CSS/generalformatting.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body id="aboutmebody">
+	<div class="plainbackground"></div>
+	<div id="maincontent">
+		<div class="navbar">
+			<span class = "icon"><a href = "index.html"><img src="images/navbaricon.png" alr = "nav bar icon", height = "65"></a></span>
+			<li class="navbarlinks"><a href = "contactme.html">| CONTACT |</a></li>
+			<li class="navbarlinks"><a href = "aboutme.html">| ABOUT ME |</a></li>
+			<li class="navbarlinks"><a href = "myprojects.html">| PROJECTS |</a></li>
+			<div class="dropdown">
+				<button class = "dropbtn"> 
+					<div class = "active">
+					| TUTORIALS |
+					</div>
+				</button>
+				<div class="dropdown-content">
+   					   <a href="oop.html">OOP</a>
+   					   <a href="arrays.html">Arrays & ArrayLists</a>
+					   <a href="2Darrays.html">2D Arrays</a>
+					   <a href="searchingandsorting.html">Searching & Sorting</a>
+					   <a href="recursion.html">Recursion</a>
+				</div>
+			</div>
+			<li class="navbarlinks"><a href = "index.html">| HOME | </a></li>
+		</div>
+		<p class="titleformat">
+			| SEARCHING & SORTING |
+		</p>
+		
+		<hr class="titlebar">
+
+		<h6 class = "tutorialheading">
+			SEARCHING
+		</h6>
+
+		<p class = "lessonformat">
+			Why do we need searching algorithms? Well, searching is useful if you need to determine if a certain element is, or is not, in a set of data. It's also useful to search for certain information to determine the output for another. There are 2 common ways to search for a value; <b>sequential</b> and <b>binary search</b>.
+		</p>
+
+		<hr class = "newlessonspace">
+		<h6 class = "tutorialheading">
+			SEQUENTIAL SEARCH
+		</h6>
+		<p class = "lessonformat">
+			A sequential search is a very common way to search for specific values in a set of data, usually an array or array list. Essentially, you traverse a set of data and compare each value to your "key" value, or the value you wish to find. To do this, you use a simple for loop and if statement. See the example method below on how to do this.
+		</p>
+		
+		<b><p class = "lessonformatcode">
+			public boolean foundKey(String [] arr, String key){ <br>
+			<span class="tab"></span>for (int i = 0; i < arr.length; i++){ // Traverses the array<br>
+			<span class="tab"></span><span class="tab"></span>if (arr[a].equals(key)){ // Tests if any of the elements are equal to the value we are looking for<br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>return true; // If we found the value, return true<br>
+			<span class="tab"></span><span class="tab"></span>} <br>
+			</span><span class="tab"></span>} <br>
+			<span class="tab"></span>return false; // If we don't find the value, return false <br>
+			} <br>
+		</p></b>
+
+		<p class = "lessonformat">
+			How would searching apply to your code? Well, consider this code snippet I (Lily Phan) wrote:
+		</p>
+
+		<b><p class = "lessonformatcode">
+			int countVows = 0; //variable to count number of vowels <br>
+       			int countCons = 0; //variable to count number of consonants <br><br>
+
+        		for (int i = 0 ; i < sentence.length () ; i++) {<br>
+        		<span class="tab"></span>char letter = sentence.charAt (i);<br>
+        		<span class="tab"></span>if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){ <br>
+        		<span class="tab"></span><span class="tab"></span>countVows++;<br>
+        		<span class="tab"></span>} else if (letter >= 'a' && letter <= 'z'){<br>
+        		<span class="tab"></span><span class="tab"></span>countCons++;<br>
+        		<span class="tab"></span>}<br>
+			}<br>
+		</p></b>
+
+		<p class = "lessonformat">
+			This code is meant to <b>count the number of vowels and consonants in a sentence</b>. Now, this doesn't seem like the sorting method I had above, right? But this is still considered searching, since I'm going through a set of data (in this case, a String, or a set of chars) to search for vowels and consonants. <br><br>
+			To start, I declared 2 variables to hold the number of vowels and consonants. Later on in the program, I would output these numbers to the user. Then, I created a for loop to iterate through every char in the String <b><style class = "code">sentence</style></b>. Assume that <b><style class = "code">sentence</style></b> is a given String by the user. Next, I created a char called <b><style class = "code">letter</style></b> to hold each char in the String. I could skip this step, and write <b><style class = "code">sentence.charAt(i)</style></b> to replace every letter in the program, but to increase readability I created a separate variable.<br><br>
+			Next, I have my if statements. The first part checks if <b><style class = "code">letter</style></b> is a vowel, and if it is, the program increments <b><style class = "code">countVows</style></b> by 1. Otherwise, the second part checks if <b><style class = "code">letter</style></b> is actually a letter and not another special character. If it is, then <b><style class = "code">countCons</style></b> increments by 1. This repeats until the for loop reaches the end of the given String.<br><br>
+
+			It's a rather simple program, but completes the problem presented. It successfully checks each character in a String and counts the vowels and consonants. <b>A common mistake</b> when writing this code, however, would be to not check for upper case letters. Notably, though not written explicitly above, the program also used <b><style class = "code">.toLowerCase()</style></b> on <b><style class = "code">sentence</style></b> to ensure all the letters are lowercase. This way, I don't need to add additional conditions such as <b><style class = "code">letter == 'A'</style></b> in my if statement.
+		</p>
+		
+		<hr class = "newlessonspace">		
+
+		<h6 class = "tutorialheading">
+			BINARY SEARCH
+		</h6>
+		
+		<p class = "lessonformat">
+			Binary search is much more efficient than sequential search, however, <b>all the elements must be in order</b> for binary search to work. This is because binary search uses a <b>"divide and conquer"</b> algorithm to find the key value. 
+		</p>
+		
+		<p class = "lessonformat">
+			Say we have a set of data ordered least to greatest. The algorithm starts by checking the middle of the set of data to determine if that value is greater or less than the value we are searching for. If it's greater than, then the algorithm checks the center of that set of data (from the middle of the original data to the end) and compares that new value to the key. If it's less than, the same applies but now the algorithm works with all the numbers less than the value at the center. This repeats until we have found the value we are looking for.
+		</p>
+
+		<p class = "lessonformat">
+			Take a look at the diagrams below, which show a visual example of how this algorithm works.
+		</p>
+
+		<img src = "images/searchingexample.jpg" alt = "searching example" class = "center">
+
+		<p class = "lessonformat">
+			<b>Step 1:</b> We find the middle of the array by the formula (arr.length/2). The middle index is at arr[2]. 
+		</p>
+
+		<p class = "lessonformat">
+			<b>Step 2:</b> We compare the value at arr[2] to 34. 57 is greater than 34, thus, we're going to look at the elements to the left of arr[2].
+		</p>
+
+		<p class = "lessonformat">
+			<b>Step 3:</b> To find the new middle value, we take the indices of the previous middle array and the other end of the area we will search and divide that by 2 to find the middle value. (2 + 0)/2 = 1, so that is our new middle value.
+		</p>
+
+		<p class = "lessonformat">
+			<b>Step 4:</b> We compare the value at arr[1] to 34. 34 is equal to arr[1], thus, we've found our key value in the index and we can return its index.
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			SELECTION SORT
+		</h6>
+
+		<p class = "lessonformat">
+			Sorting in coding is essentially the systematic arrangement of data. There are many different algorithms that sort, with some more efficient than others. But this tutorial is going to focus on <b>selection sorting</b>!
+		</p>
+
+		<p class = "lessonformat">
+			Selection sorting is a <b>comparison-based</b> sorting algorithm. It is used to organize a set of data from highest to lowest, or vise versa. Note that this isn't the fastest sorting algorithm there is. If anything, it is amongst the slower sorting algorithms. Its worst time complexity (how efficient it is) is <b>O(n<sup>2</sup>)</b>, and its best is the exact same! Take a look at the chart below if you'd like to compare it with other sorting algorithm complexities.
+		</p>
+		
+		<img src = "images/sortingalgorithmgraph.png" alt = "sorting algorithm graph" class = "center">
+
+		<p class = "lessonformat">
+			Despite its slowness, it's a very basic and easy-to-understand sorting algorithm (and can be fast for short amounts of data) which is usually why it's used.
+		</p>		
+
+		<p class = "lessonformat">
+			So how exactly does this algorithm work? It essentially searches through the unsorted part of an array for the greatest value, then swaps that greatest value with the last element of the unsorted part, and then shortens the area that is unsorted. This repeats until there are no parts left to sort. See below for the code example on how this sorting algorithm can be written.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			/** Variable declarations. */<br>
+			int [] arr = {3, 7, 3, 56, 23, 45, 78, 0, 234, -45}; <br>
+			int unsorted = arr.length;<br><br>
+			/** Runs until there is only 1 number left to sort. */ <br>
+			while (unsorted > 1) {<br>
+			<span class="tab"></span>int maxPos = 0; <br>
+			<span class="tab"></span>/** Looks for the greatest value in the array. */ <br>
+			<span class="tab"></span>for (int i = 1; i < unsorted; i++){ <br>
+			<span class="tab"></span><span class="tab"></span>if (arr [i] > arr [maxPos]){ <br>
+			<span class="tab"></span><span class="tab"></span><span class="tab"></span>maxPos = i; <br>
+			<span class="tab"></span><span class="tab"></span>}<br>
+			<span class="tab"></span>}<br>
+			<span class="tab"></span>/** Swaps the value at arr[maxPos] with the value at arr [unsorted - 1]. */ <br>
+			<span class="tab"></span>int temp = arr [maxPos];<br>
+			<span class="tab"></span>arr [maxPos] = arr [unsorted - 1]; <br>
+			<span class="tab"></span>arr [unsorted - 1] = temp; <br>
+			<span class="tab"></span>unsorted--;<br>
+			}
+		</p></b>
+
+		<p class = "lessonformat">
+			If you want a run-through on how this code works, watch the video below to see my partner, Nancy Zhu, and I explain the basics about selection sort.
+		</p>
+
+		<iframe src="https://drive.google.com/file/d/1S_1SNR8dVdZteWedHV24dOaslcukALSF/preview" width="720" height = "440" class = "center"></iframe>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			BIBLIOGRAPHY
+		</h6>
+
+		<p class = "lessonformat">
+			<a href = "https://courses.cs.vt.edu/~csonline/Algorithms/Lessons/SelectionSort/index.html" target="_blank">https://courses.cs.vt.edu/~csonline/Algorithms/Lessons/SelectionSort/index.html</a><br> 
+			<a href = "https://www.toptal.com/developers/sorting-algorithms/selection-sort" target="_blank">https://www.toptal.com/developers/sorting-algorithms/selection-sort</a><br>
+			<a href = "https://www.youtube.com/watch?v=3hH8kTHFw2A" target="_blank">https://www.youtube.com/watch?v=3hH8kTHFw2A</a><br>
+			<a href = "https://www.tutorialspoint.com/data_structures_algorithms/selection_sort_algorithm.htm#:~:text=Selection%20sort%20is%20a%20simple,part%20is%20the%20entire%20list." target="_blank">https://bit.ly/2P09kHa</a> <br>
+			<a href = "https://www.geeksforgeeks.org/searching-algorithms/" target="_blank">https://www.geeksforgeeks.org/searching-algorithms/</a> <br>
+			ICS4U0 Course Information, taught by Krasteva V.<br>
+
+			Complexity Chart Graphic: <a href = "https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/" target="_blank">https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/</a><br>
+			All code written by Lily Phan (2021).
+		</p>
+
+
+		<hr class = "pushfooter">
+	</div>
+
+	<footer>
+		<p>
+		Copyright &copy; 2021, Website made entirely from scratch by Lily Phan :)
+		</p>
+	</footer>
+</body>
+
+</html>

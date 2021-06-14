@@ -1,0 +1,391 @@
+<DOCTYPE! html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<head>
+	<title>Lily Phan // OOP</title>
+	<link rel="icon" href="images/favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="CSS/generalformatting.css">
+	<link rel="stylesheet" type="text/css" href="CSS/tutorial.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body id="aboutmebody">
+	<div class="plainbackground"></div>
+	<div id="maincontent">
+		<div class="navbar">
+			<span class = "icon"><a href = "index.html"><img src="images/navbaricon.png" alr = "nav bar icon", height = "65"></a></span>
+			<li class="navbarlinks"><a href = "contactme.html">| CONTACT |</a></li>
+			<li class="navbarlinks"><a href = "aboutme.html">| ABOUT ME |</a></li>
+			<li class="navbarlinks"><a href = "myprojects.html">| PROJECTS |</a></li>
+			<div class="dropdown">
+				<button class = "dropbtn"> 
+					<div class = "active">
+					| TUTORIALS |
+					</div>
+				</button>
+				<div class="dropdown-content">
+   					   <a href="oop.html">OOP</a>
+   					   <a href="arrays.html">Arrays & ArrayLists</a>
+					   <a href="2Darrays.html">2D Arrays</a>
+					   <a href="searchingandsorting.html">Searching & Sorting</a>
+					   <a href="recursion.html">Recursion</a>
+				</div>
+			</div>
+			<li class="navbarlinks"><a href = "index.html">| HOME | </a></li>
+		</div>
+		<p class="titleformat">
+			| OOP: OBJECT ORIENTED PROGRAMMING |
+		</p>
+		
+		<hr class="titlebar">
+
+		<h6 class = "tutorialheading">
+			PRIOR KNOWLEDGE
+		</h6>		
+
+		<p class = "lessonformat">
+			The first part of this tutorial will mainly focus on theories, and explanations behind OOP. If you feel yourself becoming bored out of your mind, and wish to see practical code examples, look out for blue boxes with a different font.
+
+<br><br>Also, before you get started: I highly recommend you check out this Google Slides tutorial I made on <b>Variables in Java</b>. If you are unfamiliar with terms such as <b><style class = "code">static</style></b>, <b><style class = "code">constant</style></b>, <b><style class = "code">String</style></b>, <b><style class = "code">int</style></b>, <b><style class = "code">double</style></b>, <b><style class = "code">scope</style></b>, etc. please read this tutorial on variables first as I will be using those terms a lot. Enjoy reading. :)
+		</p>
+
+		<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2g7p3xuJiZxZNhyuRsR3mSme1etUPOKQum0R7XaZOFwv61odipe67bYadwHbCaSRZuHgRTBTyFnJH/embed?start=true&loop=true&delayms=10000" frameborder="0" width="940" height="465" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" class = "center"></iframe>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			THE BASICS
+		</h6>
+
+		<p class = "lessonformat">
+			Many famous programming languages, such as <b>Java</b>, <b>JavaScript</b> and <b>C++</b>, are considered object-oriented languages. But, what exactly IS object-oriented programming (OOP), and how does it work? <br><br>
+			<b>OOP is a programming model meant to replicate real-life through objects.</b> By thinking of everything as an object and modelling languages as such, it makes it easier for programmers to understand how to manipulate and structure their code.<br><br>
+			The base of OOP stems from its concept of objects. <b>Objects are named instances of a class</b>. Classes are like the blueprint for objects; they define what attributes an instance of this class type will have. We also require computer memory, since we need somewhere to store this class and its objects. <br><br>
+			A famous analogy for objects is often used with cookie dough. The dough is like a computer's memory, a cookie cutter is like a class, and the cookies we create with this cutter are like our objects! With that said, this also means we can create multiple instances of a class (you never have only 1 cookie, do you?)<br><br>
+			Moving on, we briefly touched upon <b>attributes</b> of an object in a previous paragraph. This refers to its properties which may vary upon each instantiation of a class. For example, when we create a cookie, we can decide its flavour! Every object also has a <b>behaviour</b>, or what an object can do and what can be done to it. For instance, the ability to eat the cookie is a behaviour. With Java, we start referring to these behaviours as <b>methods</b> and attributes as <b>variables</b>.<br><br>
+			When working with classes, variables and methods, you'll come across the term <b>static</b>. In Java, static characteristics of a class are <b>not shared by instances of said class</b>. This means that there is never going to be a duplicate of something declared as static. As I often tell my brother, "There can only be one." The static keyword can be applied to methods, variables, or even classes! <b>When you apply static to classes, this means you cannot create instances of this class.</b> With non-static values, every instance of that class will inherit that method, and can treat it like its own. This is why <b>non-static variables/methods require an object to run</b>. <br><br>
+			So we've done a quick crash-course on classes, variables and methods, but how do we use any of this stuff in Java? A <b>class constructor</b> would be the place to start. All classes have a constructor, and this is what is used to create an instance of a class. All instance variables are usually assigned a value here. Even if a constructor is not explicitly made, Java will automatically create a default constructor for you (but this will result in your object instances being null, or empty). Remember; <b>you <i>MUST</i> create an object <i>BEFORE</i> you can use any of its instance methods or attributes</b>. <br><br>
+			Constructors are located inside a class and have the same <b>identifier</b> (name) as its class. The keyword <b>new</b> is used along with the constructor to create an object. Usually, classes have many constructors, all with the same name but they take in different information (known as <b>parameters</b>), which define the attributes of each object. If there are multiple constructors with different parameters, these are known as <b>overloaded constructors</b>. On that note, it's also possible to have <b>overloaded methods</b>, or methods with the same name but different parameters! You normally only use overloaded methods/constructors when they have similar purposes but require different information/return different values.<br><br>
+			Now that we theoretically know how an object is created, we can move on to how we use its methods and variables (also known as <b>members</b> of that object!). To do this, we use <b>dot notation</b>. Each class is given a name when they're constructed. For example, if I had a class called <b><style class = "code">Cookie</style></b> and I created an instance of the class, I could name it <b><style class = "code">gingerbread</style></b>. To access non-static methods, we would write something like <b><style class = "code">gingerbread.variableName</style></b> or <b><style class = "code">gingerbread.methodName()</style></b>! With static classes, we would instead need to call the original class's name along with the method/variable we wish to access in dot notation.<br><br>
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			ACCESS MODIFIERS
+		</h6>
+
+		<p class = "lessonformat">
+			In most intermediate programs, you'll likely be working with many different classes, and thus, many different objects. But, we don't always want them to be able to see what every other class is doing. With larger scale programs, allowing outside classes to see everything about a class becomes dangerous as it allows other classes to easily manipulate another class's variables and methods. Thus, we need <b>access modifiers</b>!<br><br>
+			There are 2 main access modifiers we will focus on in this tutorial; <b><style class = "code">private</style></b> and <b><style class = "code">public</style></b>. Adding <b><style class = "code">private</style></b> before you declare a variable or method means that said variable or method can only be used inside the class. Adding <b><style class = "code">public</style></b> before you declare/create a variable or method means that said variable or method can be used inside or outside the class.<br><br>
+			<b>Instance variables</b>, or variables that can only be used upon instantiation of a class, should usually be declared <b><style class = "code">private</style></b>. This is because we want to protect the variables from being accessed directly, so they can't be modified or used inappropriately. This is considered <b>encapsulation</b>. Methods generally depend; if you want other classes to use the method, then you declare it as <b><style class = "code">public</style></b>; otherwise, it should be declared as <b><style class = "code">private</style></b>.<br><br>
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			ENOUGH WORDS, LET'S CODE!
+		</h6>
+
+		<p class = "lessonformat">
+			I'll be honest, reading the words for code is a lot less interesting than actually coding. So let's take a look at some snippets of code and break it down!
+		</p>
+		
+		<b><p class = "lessonformatcode">
+			public class Dog{<br>
+			}
+		</p></b>
+
+
+		<p class = "lessonformat">
+			What's going on here? Well, <b>we're creating a class</b>! I set the accessor to public, as I want other classes to be able to see this Dog class. I set the data type to class, since this is a class, and added the identifier <b><style class = "code">Dog</style></b> after. 
+		</p>
+		
+		<b><p class = "lessonformatcode">
+			public class Dog{<br>
+			<span class = "tab"></span>public Dog(){<br>
+			<span class = "tab"></span>}<br>
+			<span class = "tab"></span>public Dog(String name){<br>
+			<span class = "tab"></span>}<br>
+			}<br>
+
+		</p></b>
+
+		<p class = "lessonformat">
+			Can you guess what was added? If you guessed <b>constructors</b>, you're right! I've created a default constructor with no values, and another overloaded constructor that takes in a String. Now, we've successfully created a class called Dog with 2 overloaded constructors.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public class Dog{<br>
+			<span class = "tab"></span>private String name; <br>
+			<span class = "tab"></span>public Dog(){<br>
+			<span class = "tab"></span><span class = "tab"></span>name = "";<br>
+			<span class = "tab"></span>}<br>
+			<span class = "tab"></span>public Dog(String name){<br>
+			<span class = "tab"></span><span class = "tab"></span>this.name = name;<br>
+			<span class = "tab"></span>}<br>
+			}<br>
+		</p></b>
+
+		<p class = "lessonformat">
+			Wow, what happened there? Well, I created an instance variable called <b><style class = "code">name</style></b> to hold the Dog's name. In the default constructor (no parameters), I set <b><style class = "code">name</style></b> equal to a String of length 0. In the overloaded constructor, I set <b><style class = "code">name</style></b> equal to whatever value is passed into the constructor. Notice the keyword <b><style class = "code">this</style></b>. It refers to its calling object. I used the keyword <b><style class = "code">this</style></b> to differentiate between the variable being passed in called <b><style class = "code">name</style></b>, and instance variable called <b><style class = "code">name</style></b>. Note that <b>the keyword <b><style class = "code">this</style></b> is not required for the program to work</b>, and is simply a way to increase code readability.
+		</p>
+
+
+		<b><p class = "lessonformatcode">
+			public class Dog{<br>
+			<span class = "tab"></span>private String name; <br>
+			<span class = "tab"></span>public Dog(){<br>
+			<span class = "tab"></span><span class = "tab"></span>name = "";<br>
+			<span class = "tab"></span>}<br>
+			<span class = "tab"></span>public Dog(String name){<br>
+			<span class = "tab"></span><span class = "tab"></span>this.name = name;<br>
+			<span class = "tab"></span>}<br>
+			<span class = "tab"></span>public void bark(){<br>
+			<span class = "tab"></span><span class = "tab"></span>System.out.println("woof!");<br>
+			<span class = "tab"></span>}<br>
+			}<br>
+		</p></b>
+
+		<p class = "lessonformat">
+			I've added a new method called bark, which will print out <b><style class = "code">woof!</style></b> each time it's called!
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			INHERITANCE
+		</h6>
+
+		<p class = "lessonformat">
+			One of the primary pros of an object-oriented language is that we are able to <b>extend our classes</b>. In other words, we can have classes <b>inherit</b> the methods and variables from another class! Think of it like a family; the parents can create kids who inherit their genes (and possibly money, though that's not the focus here 😉). Why is this useful? Well, it allows us to essentially <b>reuse code</b> since we're inheriting all of their methods! Let's say we wanted to extend our Dog class to create a Husky.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public class Husky extends Dog{ <br>
+			<span class = "tab"></span>public Husky(){ <br>
+			<span class = "tab"></span><span class = "tab"></span>super(); <br>
+			<span class = "tab"></span>} <br>
+			<span class = "tab"></span>public void bark(){ <br>
+			<span class = "tab"></span><span class = "tab"></span>System.out.println("WOOOOOF"); <br>
+			<span class = "tab"></span>} <br>
+			} <br>
+		</p></b>
+
+		<p class = "lessonformat">
+			What just happened? Well, by writing <b><style class = "code">extends Dog</style></b> onto <b><style class = "code">public class Husky</style></b>, we've essentially created a Husky class that <b>inherits</b> all the variables and methods from Dog! When using inheritance, the class you are inheriting properties from is called the <b>superclass</b> (parent class), and the class that is doing the inheriting is called the <b>subclass</b> (or the client of the parent class). Note that <b>a subclass can only inherit one superclass at a time</b>. This creates an <b>is-a(n) relationship</b> between our classes! In our example, Husky would be the subclass and Dog would be the superclass, meaning the Husky is-a Dog. <br><br>
+			So why are we writing <b><style class = "code">super()</style></b> in Husky's constructor? Well, we're writing super because we want to use the superclass's constructor. If using the superclass's constructor, it MUST be the first line in the subclass's constructor.<br><br>
+			What about the <b><style class = "code">bark()</style></b> method? Why is there a new one? Well, I'm simply <b>overriding</b> the parent's method! I'm using the same method name, but redefining the contents of the method. With overridden methods, how will Java know which one to call? Well, when you use an object to invoke a method, the object finds the <b>most recent class</b> starting from the class of your object's data type that implements the method and uses that one!<br><br>
+			Also, remember how we said that <b>subclasses inherit all the variables and methods from its superclass</b>? This is true, but it doesn't strictly mean that they can access everything. We can access the method <b><style class = "code">bark()</style></b>, since it's public! Note that since we tried to override <b><style class = "code">bark()</style></b> in our subclass, if we wanted to use the super class's method we'd need to write <b><style class = "code">super.bark()</style></b>. But since we used private on our superclass's instance variables, this means that we can't access them directly. Thus, let me introduce <b>get and set methods</b>!<br><br>
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			GETTERS & SETTERS
+		</h6>
+
+		<p class = "lessonformat">
+			Get and set methods are mainly used to return or change the value of an instance variable. <br><br>
+			<b>Get methods</b> (also known as accessor methods, or getters) are usually written in the form <b><style class = "code">public dataType getVar(){ return var; }</style></b>. This essentially creates a method whose purpose is to return the value of a variable. Return statements (<b><style class = "code">return var;</style></b> in this case) essentially return a value and quits the method. For example, if I wrote <b><style class = "code">System.out.println(getString())</style></b> and <b><style class = "code">getString()</style></b> returns <b><style class = "code">Hello</style></b>, then my println statement would output <b><style class = "code">Hello</style></b>. Remember, <b><style class = "code">dataType</style></b> should always be the same data type as the variable you are returning!<br><br>
+			<b>Set methods</b> (also known as mutator methods, or setters) are usually written in the form <b><style class = "code">public void setVar(dataType a){ var = a; }</style></b>. This essentially creates a method whose purpose is to set the value of a variable. Remember, <b><style class = "code">dataType</style></b> should always be the same data type as the variable you are changing! 
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			CLASS HIERARCHIES
+		</h6>
+
+		<p class = "lessonformat">		
+			So we know inheritance creates an is-a relationship between subclasses and superclasses. But to what extent can we take this? Consider the diagram below.
+		</p>
+		
+		<img src = "images/classhierarchy.PNG" alt = "class hierarchy example" class = "center">
+
+		<p class = "lessonformat">
+			The arrows depict an is-a relationship between the classes. For example, Husky is-a dog. Teacup Husky is-a Husky. But, did you know that Teacup Husky is, by extension, also a dog? This means that Teacup Husky also inherits the variables and methods from Dog, and in case, this is done through Husky. Why is this important? Well, doing this helps to eliminate repetition of code among the classes. For example, instead of creating multiple eyes, legs, bodies and fur variables in husky, poodle and bulldog, we can put them all into dogs so that its subclasses will inherit all the information. <br><br>
+			On the topic of hierarchies, let's also dive into <b>abstract classes</b>! Abstract classes usually contain one or more abstract methods (in method <b>signatures</b> (declaration line), they're written something like <b><style class = "code">public abstract void method()</style></b>). <b>Abstract classes are used as common superclasses for more specific classes</b>. Normally, they're closer to the top of the hierarchy. Note that you cannot instantiate an abstract class; if you want to use it, you need to inherit the class. A class with no abstract methods is called <b>concrete</b>.
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			POLYMORPHISM
+		</h6>
+
+		<p class = "lessonformat">
+			<b>Polymorphism</b> essentially refers to an object's ability to take on different "forms" via inheritance. If multiple classes in your is-a relationship chain have overridden methods, this is essentially how Java knows which one to use at which time based on the Object's data type. Consider the following code:
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public class Bird{<br>
+			<span class = "tab"></span>public void chirp(){<br>
+			<span class = "tab"></span><span class = "tab"></span>System.out.println("weeeee");<br>
+			<span class = "tab"></span>}<br>
+			}<br><br>
+			public class Robin extends Bird{<br>
+			<span class = "tab"></span>public void chirp(){<br>
+			<span class = "tab"></span><span class = "tab"></span>System.out.println("chirpity chirp chirp");<br>
+			<span class = "tab"></span>}<br>
+			}<br><br>
+			public class BlueJay extends Bird{<br>
+			<span class = "tab"></span>public void chirp(){<br>
+			<span class = "tab"></span><span class = "tab"></span>System.out.println("I like seeds");<br>
+			<span class = "tab"></span>}<br>
+			}<br><br>
+			public class Test{<br>
+			<span class = "tab"></span>public static void main (String [] args){<br>
+			<span class = "tab"></span><span class = "tab"></span>Bird birb = new Bird();<br>
+			<span class = "tab"></span><span class = "tab"></span>Bird robin = new Robin();<br>
+			<span class = "tab"></span><span class = "tab"></span>Bird blueJay = new BlueJay();<br>
+			<span class = "tab"></span><span class = "tab"></span>birb.chirp();<br>
+			<span class = "tab"></span><span class = "tab"></span>robin.chirp();<br>
+			<span class = "tab"></span><span class = "tab"></span>blueJay.chirp();<br>
+			<span class = "tab"></span>}<br>
+			}
+		</p></b>
+		
+		<p class = "lessonformat">
+			Which will output in console:
+		</p>
+
+		<b><p class = "lessonformatcode">
+			weeeee <br>
+			chirpity chirp chirp<br>
+			I like seeds
+		</p></b>
+
+		<p class = "lessonformat">
+			Polymorphism can give a superclass the ability to refer to its subclass's methods. There's no need to do anything special for polymorphism to occur. As long as there's a common superclass among some subclasses, there's polymorphism.
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			UPCASTING & DOWNCASTING
+		</h6>
+
+		<p class = "lessonformat">
+			Before we begin, I'd like to make clear that <b>upcasting and downcasting aren't the same as casting or promoting data types</b>. This is because upcasting and downcasting an object doesn't change the object itself, it just labels it differently. Labelling an object differently essentially allows Java to treat an object like it would another object. <br><br>
+
+			<b>Upcasting</b> refers to assigning the value of a subclass to a variable of a superclass (or higher). For example, <b><style class = "code">Bird robin = new Robin()</style></b> from before is upcasting since we're assigning a value of a subclass type to a variable of a superclass type. This can be done automatically without any special words. Note that if you DO upcast, this means you can't use any of the methods in the object's subclass until you downcast the object.<br><br>
+
+			<b>Downcasting</b> is different, as it's a more risky situation. Continuing with the previous example, we can always say that all Robins, BlueJay, etc. are Birds; this is why upcasting always works. However, we can't definitively say that all Birds are a Robin or BlueJay. Thus, with downcasting, we need to ensure that the object is being downcasted to the right subclass.<br><br>
+
+			There is a statement called <b><style class = "code">instanceOf</style></b>, which helps to determine if an object is an instance of a class. This allows us to determine whether we can downcast or not. If we had, say <b><style class = "code">Bird j = new BlueJay()</style></b> we could downcast <b><style class = "code">j</style></b> by writing <b><style class = "code">BlueJay a = (BlueJay) j</style></b>.<br><br>
+
+			Notably, you can only downcast an object if it has been upcasted before. For example, if I can't cast my previous <b><style class = "code">Birb</style></b> object into a Robin or BlueJay since it's neither of them. However, I CAN downcast something like <b><style class = "code">Bird robin = new Robin()</style></b> into a Robin (<b><style class = "code">Robin r = (Robin) robin</style></b>).
+		</p>
+
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			USING OTHER CLASSES
+		</h6>
+
+		<p class = "lessonformat">
+			At this point, I may be giving the impression that classes can only be associated with other classes through inheritance. But this isn't the case at all; it's possible to create instances of classes in other classes to complete tasks. To clear this up, let's take a look at a snippet of code Nancy Zhu and I wrote.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public class Book {<br>
+			<span class = "tab"></span>/** Holds title of the book.*/<br>    
+			<span class = "tab"></span>String title;<br>
+			<span class = "tab"></span>/** Course the book is for.*/<br>
+			<span class = "tab"></span>String course;<br><br>			
+			<span class = "tab"></span>public Book() {<br>
+			<span class = "tab"></span><span class = "tab"></span>title = "";<br>
+			<span class = "tab"></span><span class = "tab"></span>course = "";<br>
+			<span class = "tab"></span>}<br><br>
+			<span class = "tab"></span>public Book(String title, String course){<br>
+			<span class = "tab"></span><span class = "tab"></span>this.title = title;<br>
+			<span class = "tab"></span><span class = "tab"></span>this.course = course;<br>
+			<span class = "tab"></span>}<br><br>
+			<span class = "tab"></span>/** Sets the title of the Book.*/<br>
+			<span class = "tab"></span>public void setTitle(String thisTitle) {<br>
+			<span class = "tab"></span><span class = "tab"></span>title = thisTitle;<br>
+			<span class = "tab"></span>}<br><br>
+			<span class = "tab"></span>/** Sets the course of the Book.*/<br>
+			<span class = "tab"></span>public void setCourse(String thisCourse){<br>
+			<span class = "tab"></span><span class = "tab"></span>course = thisCourse;<br>
+			<span class = "tab"></span>}   <br>
+			/** Rest of code not shown. */
+		</p></b>
+
+		<p class = "lessonformat">
+			This code was part of an assignment we had to do to simulate a student being denied access to a classroom if they did not have the required materials for class. One part of the assignment was to <b>create a Book class and create 4 Book objects in a Locker class</b>. See below for a part of the Locker class code.
+		</p>
+
+		<b><p class = "lessonformatcode">
+			public class Locker { <br>
+			<span class = "tab"></span>/** Locker number.*/   <br> 
+			<span class = "tab"></span>int number;<br>
+			<span class = "tab"></span>/** Locker owner.*/<br>
+			<span class = "tab"></span>Student owner; <br>
+			<span class = "tab"></span>/** Jacket of Student.*/<br>
+			<span class = "tab"></span>private Jacket studentJacket;<br>
+			<span class = "tab"></span>/** Array of books.*/<br>
+			<span class = "tab"></span>private Book books[];<br><br>
+    
+			<span class = "tab"></span>public Locker() {<br>
+			<span class = "tab"></span><span class = "tab"></span>number = (int)(Math.random()*1000);<br>
+			<span class = "tab"></span><span class = "tab"></span>owner = null;<br>
+			<span class = "tab"></span><span class = "tab"></span>books = new Book[4];<br>
+			<span class = "tab"></span><span class = "tab"></span>books[0] = new Book("History", "CHC2D1"); // Line 1<br>
+			<span class = "tab"></span><span class = "tab"></span>books[1] = new Book("Computer Science", "ICS4M1");<br>
+			<span class = "tab"></span><span class = "tab"></span>books[2] = new Book("Introduction to Photography", "AWQ2O1");<br>
+			<span class = "tab"></span><span class = "tab"></span>books[3] = new Book("Visual Arts", "AVI2O1"); //Line 4<br>
+			<span class = "tab"></span>}<br>
+			/** Rest of code not shown. */
+
+		</p></b>
+
+		<p class = "lessonformat">	
+			In this code, you can see how Book is treated like a data type despite being a class. When we write <b><style class = "code">new Book("titleHere", "courseHere")</style></b> we are actually calling the constructor of the Book class and creating an instance of the class with the given information. Lines 1-4 essentially complete the problem we were given of creating 4 books in the Locker class. <br><br>
+
+			So, <b>why should we use classes like this</b>? Well, this is much more efficient and easier to keep track of than creating, say, 2 arrays to hold all the titles and courses. Moreover, it easily enables us to make changes to ALL the books at once if necessary. For example, if we wanted to add another attribute to each book, we can do it once in the Book class rather than changing it multiple times in the Locker class. Just remember; if you are declaring multiple objects in an array, you still need to use the keyword <b>new</b>. Moreover, a common misinterpretation of this concept is that objects are initialized to their default values (values in the default constructor) in an array, but this isn't the case. Objects are also considered reference types, and thus, when initialized with no specified values they will be <b><style class = "code">null</style></b>.
+		</p>
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			INTERFACES
+		</h6>
+		
+		<p class = "lessonformat">
+			An <b>interface</b> in Java is like an abstract class, but it has no variables or constructors, and all its methods are abstract. To declare an interface, you would write something like <b><style class = "code">public interface Play</style></b> where interface now replaces class. Note that <b>interfaces cannot be instantiated</b>, you can only refer to them. <br><br>
+
+In order to use an interface, we must state that <b>a class implements an interface</b>. For example, <b><style class = "code">public class Dog implements Play</style></b> could be the signature for the class Dog. A class can implement multiple interfaces.<br><br>
+
+Notably, when using an interface, <b>you MUST use all the methods in that interface</b>. See below for an example of an interface being used. 
+		</p>
+		
+		<img src = "images/interfaces.png" alt = "interfaces example" class = "center">
+
+		<hr class = "newlessonspace">
+
+		<h6 class = "tutorialheading">
+			BIBLIOGRAPHY
+		</h6>
+
+		<p class = "lessonformat">
+			<a href = "https://www.educative.io/blog/object-oriented-programming" target = "_blank">https://www.educative.io/blog/object-oriented-programming</a><br>
+			<a href = "https://www.w3schools.com/java/java_polymorphism.asp" target = "_blank">https://www.w3schools.com/java/java_polymorphism.asp</a> <br>
+			ICS4U0 Course Information, taught by Krasteva V.<br>
+			Interface Image Example: <a href = "https://classroom.google.com/u/1/w/MjY5NjQzMDA5ODg0/tc/Mjk1MzkzMDU1Nzc2" target = "_blank">Classes abstract inherit w21.pdf</a>, Krasteva V. (n.d.)<br>
+			All other images and code written by Lily Phan (2021).
+		</p>
+
+		<hr class="pushfooter">
+	</div>
+	<footer>
+		<p>
+		Copyright &copy; 2021, Website made entirely from scratch by Lily Phan :)
+		</p>
+	</footer>
+</body>
+
+</html>
